@@ -9,7 +9,7 @@ As `oiplot` is not currently hosted on CRAN, it needs to be installed directly f
 
 ```r
 # install.packages('devtools')
-devtools::install_github('Tom-Harris-MIT/oiplot')
+devtools::install_github('OpportunityInsights/oiplot')
 ```
 
 For further information about oiplot, check out the package’s GitHub repository. The bulk of the details about how to use the package and its functions are detailed below.
