@@ -31,7 +31,7 @@ Please note, this function does not change based on the chart type you are makin
 Here's an example of how it can be used in a standard workflow:
 ```r
 # Create the scatter plot
-scatter_plot <- ggplot(mtcars, aes(x = wt, y = mpg, colour = as.factor(cyl))) +
+scatter_plot <- ggplot(mtcars, aes(x = wt, y = mpg)) +
   geom_point(size = 2, alpha = 0.8) +
   geom_smooth() +
   labs(x = "Weight", y = "Miles Per Gallon",
