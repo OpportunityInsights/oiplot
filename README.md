@@ -38,6 +38,7 @@ scatter_plot <- ggplot(mtcars, aes(x = wt, y = mpg, colour = as.factor(cyl))) +
        title = "Scatterplot of Car Weight vs. MPG") +
   oi_style()
 ```
+![image](https://github.com/OpportunityInsights/oiplot/assets/100818286/76ef65de-7b5d-4818-8372-2b0d28921f6a)
 
 ## 🎁 finalise_plot
 finalise_plot allows you to save your plot adhering to the appropriate guidelines for publication. Currently, this function is identical to the 'bbplot' version, following BBC style. However, this is a work in progress. Here's an example of how the finalise_plot() function is used in a standard workflow:
