@@ -1,7 +1,7 @@
 #### Test ####
 
 # Install oiplot
-devtools::install_github("Tom-Harris-MIT/oiplot")
+devtools::install_github("OpportunityInsights/oiplot")
 
 # Load the oiplot and ggplot2 packages
 library(oiplot)
