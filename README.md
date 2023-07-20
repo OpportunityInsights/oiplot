@@ -60,6 +60,9 @@ A workaround is to use the color scales directly in your plots, like so:
 
 ```r
 ## OI Facebook Colour Scheme
+set_oi_palette()
+
+## Manually, you can also use this to set the fb oi colour palette:
 fb_palette <- c("#29B6A4", "#FAA523", "#003A4F", "#7F4892", "#A4CE4E", 
                 "#2B8F43", "#0073A2", "#E54060", "#FFD400", "#6BBD45")
 
