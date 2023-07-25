@@ -12,6 +12,12 @@ As `oiplot` is not currently hosted on CRAN, it needs to be installed directly f
 devtools::install_github('OpportunityInsights/oiplot')
 ```
 
+### 📦 Implementation in Facebook environment - Bento workbook
+```r
+fbr::with_proxy(devtools::install_github("OpportunityInsights/oiplot"))
+library(oiplot)
+```
+
 For further information about oiplot, check out the package’s GitHub repository. The bulk of the details about how to use the package and its functions are detailed below.
 
 Once you have downloaded and successfully installed the package, you are ready to create fantastic charts 🚀.
@@ -79,4 +85,4 @@ scatter_plot <- ggplot(mtcars, aes(x = wt, y = mpg, colour = as.factor(cyl))) +
 print(scatter_plot)
 ```
 
-Let your data storytelling journey begin with oiplot! 🌈
+Wooohoooo oiplot! 🌈
