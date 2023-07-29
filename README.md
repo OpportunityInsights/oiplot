@@ -14,8 +14,8 @@ devtools::install_github('OpportunityInsights/oiplot')
 
 ### 📦 Implementation in Facebook environment - Bento workbook
 ```r
-fbr::with_proxy(devtools::install_github("OpportunityInsights/oiplot"))
-library(oiplot)
+fbr::with_proxy(devtools::install_github("OpportunityInsights/oiplot", lib = tempdir()))
+library(oiplot, lib.loc = tempdir())
 ```
 
 For further information about oiplot, check out the package’s GitHub repository. The bulk of the details about how to use the package and its functions are detailed below.
