@@ -60,6 +60,7 @@ finalise_plot(
 ```
 ## 🎨 OI Facebook Colour Scheme
 This package includes the set_oi_palette() function, which sets the OI Facebook colour scheme as the default palette for ggplots.
+![image](https://github.com/OpportunityInsights/oiplot/assets/100818286/53785cdf-2a14-471c-850a-851064888753)
 
 However, if a plot specifically sets a different colour or fill scale, that will override the defaults. The same is true if a plot sets a specific colour for a geom.
 A workaround is to use the color scales directly in your plots, like so:
