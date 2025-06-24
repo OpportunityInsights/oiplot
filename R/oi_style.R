@@ -20,7 +20,7 @@ scale_fill_oi <- function(...) scale_fill_manual(values = OI_COLORS, ...)
 #'   geom_hline(yintercept = 0, size = 1, colour = "#333333") +
 #'   oi_style()
 #' @export
-theme_oi <- function(high_contrast=FALSE, font="Helvetica") {
+theme_oi <- function(high_contrast=TRUE, font="Helvetica") {
   colors <- list(
     titles = ifelse(high_contrast, "black", "#222222"),
     axes = ifelse(high_contrast, "black", "#747577")

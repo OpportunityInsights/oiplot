@@ -4,7 +4,7 @@
 \alias{theme_oi}
 \title{ggplot clone of the OI Stata scheme}
 \usage{
-theme_oi(high_contrast = FALSE, font = "Helvetica")
+theme_oi(high_contrast = TRUE, font = "Helvetica")
 }
 \description{
 ggplot clone of the OI Stata scheme
