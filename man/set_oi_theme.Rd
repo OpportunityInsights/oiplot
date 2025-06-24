@@ -2,12 +2,15 @@
 % Please edit documentation in R/oi_style.R
 \name{set_oi_theme}
 \alias{set_oi_theme}
-\title{Use the OI theme  and color palette for all plots generated in this session}
+\title{Use the OI theme and color palette for all plots generated in this session}
 \usage{
-set_oi_theme()
+set_oi_theme(...)
+}
+\arguments{
+\item{...}{args to pass to `theme_oi`}
 }
 \description{
-Use the OI theme  and color palette for all plots generated in this session
+Use the OI theme and color palette for all plots generated in this session
 }
 \examples{
 # place this in your .Rprofile to set the theme globally

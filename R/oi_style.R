@@ -60,18 +60,25 @@ theme_oi <- function(high_contrast=FALSE, font="Helvetica") {
     )
 }
 
-#' Use the OI theme  and color palette for all plots generated in this session
+#' Use the OI theme and color palette for all plots generated in this session
+#'
+#' @param ... args to pass to `theme_oi`
 #'
 #' @examples
 #' # place this in your .Rprofile to set the theme globally
 #' oiplot::set_oi_theme()
 #'
 #' @export
-set_oi_theme <- function() {
-  update_geom_defaults("point", list(colour = OI_COLORS[1]))
-  update_geom_defaults("smooth", list(colour = OI_COLORS[1]))
-  update_geom_defaults("line", list(colour = OI_COLORS[1]))
+set_oi_theme <- function(...) {
+  # set theme
+  theme_set(theme_oi(...))
 
+  # set default colors for when there is NO color/fill mapping
+  update_geom_defaults("point", list(colour = OI_COLORS[1]))
+  update_geom_defaults("line", list(colour = OI_COLORS[1]))
+  update_geom_defaults("smooth", list(colour = OI_COLORS[1]))
+
+  # set default colors when there IS a color/fill mapping
   options(
     ggplot2.discrete.colour = OI_COLORS,
     ggplot2.discrete.fill = OI_COLORS
