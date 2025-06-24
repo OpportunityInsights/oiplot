@@ -5,7 +5,7 @@
 #' 
 #' Operates in place (meaning that the original plots are themselves updated).
 #' 
-#' @example
+#' @examples
 #' plots <- c(4, 6, 8) %>% map(make_plot)
 #' align_axes(plots)
 #' 
@@ -28,9 +28,9 @@ align_axes <- function(unaligned_plots) suppressWarnings({
     map(~ set_limits(.x,
       xlim = c(lims$x_1, lims$x_2),
       ylim = c(lims$y_1, lims$y_2)
-    )) %>%
-    invisible()
+    ))
 
+  unaligned_plots
 })
 
 get_scale <- function(plot, axis) {

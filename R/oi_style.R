@@ -6,10 +6,10 @@ OI_COLORS <- c(
 )
 
 #' @export
-scale_color_oi <- function(...) scale_color_manual(values = my_palette, ...)
+scale_color_oi <- function(...) scale_color_manual(values = OI_COLORS, ...)
 
 #' @export
-scale_fill_oi <- function(...) scale_fill_manual(values = my_palette, ...)
+scale_fill_oi <- function(...) scale_fill_manual(values = OI_COLORS, ...)
 
 
 #' ggplot clone of the OI Stata scheme
