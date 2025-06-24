@@ -27,15 +27,17 @@ at the top of your script. This will update the default theme and color scheme.
 library(tidyverse)
 library(oiplot)
 
-set_oi_theme(high_contrast = T)
+set_oi_theme()
 
-ggplot(mtcars, aes(wt, mpg)) +
+plot <- ggplot(mtcars, aes(disp, mpg)) +
   geom_point() +
   geom_smooth() +
   labs(
-    x = "Weight", y = "Miles Per Gallon",
-    title = "Scatterplot of Car Weight vs. MPG"
+    x = "Engine Displacement", y = "Miles Per Gallon",
+    title = "Engine Size vs. MPG"
   )
+
+print(plot)
 ```
 
 ### Aligning plot axes
@@ -44,16 +46,15 @@ ggplot(mtcars, aes(wt, mpg)) +
 library(tidyverse)
 library(oiplot)
 
-set_oi_theme(high_contrast = T)
+set_oi_theme()
 
 make_plot <- function(max_cyl) {
   mtcars %>%
   mutate(wt = ifelse(cyl <= max_cyl, wt, NA)) %>%
   ggplot(aes(wt, mpg, color = as.factor(cyl))) +
   geom_point() +
-  geom_smooth(se = F, show.legend = F) +
+  geom_smooth(method = "lm", se = F, show.legend = F) +
   scale_x_continuous(labels = \(x) str_glue("{x}k")) +
-  scale_y_log10() +
   labs(
     title = "Car Weight vs. MPG",
     x = "Weight (lbs)",
