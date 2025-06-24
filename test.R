@@ -1,43 +1,45 @@
-#### Test ####
+# install oiplot
+# devtools::document()
+# devtools::install_local(force = T)
 
-# Install oiplot
-devtools::install_github("OpportunityInsights/oiplot")
-
-# Load the oiplot and ggplot2 packages
 library(oiplot)
-library(ggplot2)
+library(tidyverse)
 
-# Setting default OI Facebook Palette
-set_oi_palette()
+# --- basic test ---
 
-# Create the scatter plot
-scatter_plot <- ggplot(mtcars, aes(x = wt, y = mpg)) +
-  geom_point(size = 2, alpha = 0.8) +
+scatter_plot <- ggplot(mtcars, aes(wt, mpg)) +
+  geom_point() +
   geom_smooth() +
   labs(
     x = "Weight", y = "Miles Per Gallon",
     title = "Scatterplot of Car Weight vs. MPG"
-  ) +
-  oi_style()
+  )
 
-# Print the plot
-scatter_plot
+print(scatter_plot) # should be default theme
 
+set_oi_theme(high_contrast = T)
+print(scatter_plot) # should be oi them
 
-## OI Facebook Colour Scheme
-fb_palette <- c(
-  "#29B6A4", "#FAA523", "#003A4F", "#7F4892", "#A4CE4E",
-  "#2B8F43", "#0073A2", "#E54060", "#FFD400", "#6BBD45"
-)
+# --- animation test ---
 
-scatter_plot <- ggplot(mtcars, aes(x = wt, y = mpg, colour = as.factor(cyl))) +
-  geom_point(size = 2, alpha = 0.8) +
-  geom_smooth() +
+make_plot <- function(max_cyl) {
+  mtcars %>%
+  mutate(wt = ifelse(cyl <= max_cyl, wt, NA)) %>%
+  ggplot(aes(wt, mpg, color = as.factor(cyl))) +
+  geom_point() +
+  geom_smooth(se = F, show.legend = F) +
+  scale_x_continuous(labels = \(x) str_glue("{x}k")) +
+  scale_y_log10() +
   labs(
-    x = "Weight", y = "Miles Per Gallon",
-    title = "Scatterplot of Car Weight vs. MPG"
-  ) +
-  oi_style() +
-  scale_colour_manual(values = fb_palette) # Apply the color scale manually to the plot
+    title = "Car Weight vs. MPG",
+    x = "Weight (lbs)",
+    y = "Miles Per Gallon",
+    color = "Cylinders"
+  )
+}
 
-print(scatter_plot)
+plots <- c(4, 6, 8) %>% map(make_plot)
+plots
+
+align_axes(plots)
+plots
