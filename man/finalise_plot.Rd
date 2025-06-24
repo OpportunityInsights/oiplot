@@ -34,12 +34,13 @@ Running this function will save your plot with the correct guidelines for public
 It will left align your title, subtitle and source, add the oi blocks at the bottom right and save it to your specified location.
 }
 \examples{
-finalise_plot(plot_name = myplot,
-source = "The source for my data",
-save_filepath = "filename_that_my_plot_should_be_saved_to-nc.png",
-width_pixels = 640,
-height_pixels = 450,
-logo_image_path = "logo_image_filepath.png"
+finalise_plot(
+  plot_name = myplot,
+  source = "The source for my data",
+  save_filepath = "filename_that_my_plot_should_be_saved_to-nc.png",
+  width_pixels = 640,
+  height_pixels = 450,
+  logo_image_path = "logo_image_filepath.png"
 )
 
 }
