@@ -82,7 +82,7 @@ set_oi_theme <- function() {
 
 #' @export
 oi_style <- function(...) {
-  .Deprecated("theme_io")
+  .Deprecated("theme_oi")
   theme_io(...)
 }
 
