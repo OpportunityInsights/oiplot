@@ -71,12 +71,12 @@ theme_oi <- function(high_contrast=FALSE, font="Helvetica") {
 #' @export
 set_oi_theme <- function(...) {
   # set theme
-  theme_set(theme_oi(...))
+  ggplot2::theme_set(theme_oi(...))
 
   # set default colors for when there is NO color/fill mapping
-  update_geom_defaults("point", list(colour = OI_COLORS[1]))
-  update_geom_defaults("line", list(colour = OI_COLORS[1]))
-  update_geom_defaults("smooth", list(colour = OI_COLORS[1]))
+  ggplot2::update_geom_defaults("point", list(colour = OI_COLORS[1]))
+  ggplot2::update_geom_defaults("line", list(colour = OI_COLORS[1]))
+  ggplot2::update_geom_defaults("smooth", list(colour = OI_COLORS[1]))
 
   # set default colors when there IS a color/fill mapping
   options(
@@ -90,7 +90,7 @@ set_oi_theme <- function(...) {
 #' @export
 oi_style <- function(...) {
   .Deprecated("theme_oi")
-  theme_io(...)
+  theme_oi(...)
 }
 
 #' @export
